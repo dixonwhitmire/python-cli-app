@@ -1,0 +1,42 @@
+[tool.isort]
+profile = "black"
+
+[tool.poetry]
+name = "pythoncliapp"
+version = "0.1.0"
+description = "A template for Python CLI applications"
+license = "Apache 2.0"
+authors = ["Dixon Whitmire <dixonwh@gmail.com>"]
+maintainers = ["Dixon Whitmire <dixonwh@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/dixonwhitmire/python-cli-app"
+repository = "https://github.com/dixonwhitmire/python-cli-app"
+documentation = "https://github.com/dixonwhitmire/python-cli-app/README.md"
+keywords = ["template", "python", "argparse"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+]
+packages = [{include = "pythoncliapp", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.0.2"
+pydantic-settings = "^2.0.1"
+pyaml = "^23.7.0"
+
+[tool.poetry.scripts]
+cli = 'pythoncliapp.cli.main:main'
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
